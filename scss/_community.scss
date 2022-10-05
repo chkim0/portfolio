@@ -1,0 +1,36 @@
+.community{
+    .sub_vidual{
+        background: url(../img/brand3.jpg) no-repeat center/cover;
+    }
+    .inner{
+        table{
+            width: 100%;
+            border-bottom: 2px solid #111;
+            border-collapse: collapse;
+            margin-bottom: 50px;
+
+            tr{
+                &:nth-of-type(even){
+                    background: #eee;
+                }
+                &:hover{
+                    background: lightcyan;
+                }
+                th{
+                    padding: 15px; background: #444; color: #fff;
+                    &:nth-of-type(1){width: 10%;}
+                    &:nth-of-type(3){width: 15%;}
+                    &:nth-of-type(4){width: 15%;}
+                }
+                td{
+                    padding: 13px;
+                    border-bottom: 1px solid #ddd;
+                    text-align: center;
+                    &.left{
+                        text-align: left;
+                    }
+                }
+            }
+        }
+    }
+}

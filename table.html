@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <!--
+
+    1. 가로칸을 합칠 때는 합쳐지는 칸을 삭제한 후 시작칸 colspan = '합쳐지는 칸수'
+    2. 세로칸을 합칠 때는 합쳐지는 칸을 삭제한 후 시작칸 rowspan = '합쳐지는 칸수'
+
+  -->
+  <table class="tableA" >
+    <tr>
+      <th>제목1</th>
+      <th>제목2</th>
+      <th>제목3</th>
+      <th>제목4</th>
+      <th>제목5</th>
+    </tr>
+    <tr>
+      <td colspan="2">1,2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td rowspan="2">6,11</td>
+      <td>7</td>
+      <td>8</td>
+      <td colspan="2" rowspan="2">9,10,14,15</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>17</td>
+      <td>18</td>
+      <td>19</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <td>21</td>
+      <td>22</td>
+      <td>23</td>
+      <td>24</td>
+      <td>25</td>
+    </tr>
+  </table>
+
+  <!--
+    
+    thead - 테이블의 행 그룹중 제목 셀그룹,
+    tbody - 본문
+    tfoot - 레코드 내용의 소계, 합계 등 정보에 해당하는 푸터, 한번만사용
+
+  -->
+
+  <table >
+    <caption class="hidden">A반의 시험성적표</caption>
+
+    <thead>
+      <tr>
+        <th>국어</th>
+        <th>수학</th>
+        <th>과학</th>
+        <th>영어</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>70</td>
+        <td>70</td>
+        <td>70</td>
+        <td>70</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table >
+    <caption class="hidden">회원정보</caption>
+
+    <!--
+    
+    scope : 제목셀과 내용셀의 관계를 지정해준다.
+    데이터의 의미와 관계를 파악하기 쉽게 해준다.
+    th에 scope속성을 지정하고 방향에 따라 col, row를 지정한다
+
+  -->
+
+    <tr>
+      <th scope="row">이름</th>
+      <td>홍길동</td>
+    </tr>
+    <tr>
+      <th scope="row">성별</th>
+      <td>홍길동</td>
+    </tr>
+    <tr>
+      <th scope="row">나이</th>
+      <td>홍길동</td>
+    </tr>
+
+  </table>
+
+  <table >
+    <caption class="hidden">당월 결제 금액</caption>
+
+    <thead>
+      <tr>
+        <th colspan="5" id="a1">당월 결제하실 금액</th>
+      </tr>
+      <tr>
+        <th id="b1">회차</th>
+        <th id="b2">원금</th>
+        <th id="b3">혜택금액</th>
+        <th id="b4">환율</th>
+        <th id="b5">수수료</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td headers="a1 b1">1</td>
+        <td headers="a1 b2">100</td>
+        <td headers="a1 b3">200</td>
+        <td headers="a1 b4">300</td>
+        <td headers="a1 b5">400</td>
+      </tr>
+    </tbody>
+
+  </table>
+</body>
+
+</html>
