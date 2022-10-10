@@ -1,5 +1,19 @@
 .gallery{
     .sub_vidual{
-        background: url(../img/brand2.jpg) no-repeat center/cover;
+        background: url(../img/img3.jpg) no-repeat center/cover;
+    }
+}
+.inner {
+    width: 1180px;
+    height: 120px;
+    margin: 0 auto;
+    position: relative;
+    > h1 {
+        left: 0;
+        bottom: 15px;
+        > a {
+            font: bold 25px/1 "orbitron";
+            color: #777;
+        }
     }
 }
