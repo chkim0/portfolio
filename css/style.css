@@ -762,36 +762,36 @@ a {
   transform: translate(-50%, -50%);
 }
 #visual .inner h1 {
-  font: normal 110px/1 "Anton";
+  font: normal 110px/1 "Lobster";
   color: #fff;
   margin-bottom: 60px;
   margin-left: 40px;
   text-align: center;
 }
 #visual .inner p {
-  font: 16px/1.4 "Indie+Flower";
-  color: #fff;
+  font: 16px/1.4 "ANTON";
+  color: #eee;
   margin-bottom: 100px;
+  text-align: center;
 }
 #visual .inner a {
   display: block;
   width: 400px;
   height: 30px;
-  border: 1px solid #bbb;
+  border: 1px solid #222;
   border-radius: 5px;
-  font: bold 11px/30px "Indie+Flower";
+  font: bold 11px/30px "Lobster";
   color: #fff;
   text-align: center;
 }
 #visual .inner a:hover {
-  background: skyblue;
-  color: #555;
+  background: #222;
+  color: #fff;
 }
 
 #news {
   width: 100%;
   padding: 200px 0;
-  background: url(../img/back1.jpg) no-repeat center;
 }
 #news .inner {
   width: 1180px;
@@ -800,7 +800,7 @@ a {
 }
 #news .inner h1 {
   font: bold 25px/1.2 "Lobster";
-  color: #fff;
+  color: #000;
   text-align: center;
   margin-bottom: 50px;
   opacity: 1;
@@ -809,23 +809,26 @@ a {
   width: 100%;
 }
 #news .inner .wrap::after {
-  filter: blur(1px);
+  content: "";
+  display: block;
+  clear: both;
 }
 #news .inner .wrap article {
   opacity: 1;
   float: left;
   width: 280px;
+  height: 200px;
   margin-right: 20px;
   overflow: hidden;
   border-radius: 15px;
-  z-index: 10;
+  position: relative;
 }
 #news .inner .wrap article:last-of-type {
   margin-right: 0;
 }
 #news .inner .wrap article .pic {
   width: 100%;
-  height: 180px;
+  height: 200px;
   overflow: hidden;
 }
 #news .inner .wrap article .pic img {
@@ -834,34 +837,91 @@ a {
   object-fit: cover;
   transition: 0.5s;
 }
+#news .inner .wrap article .pic p {
+  font: 20px/1 "ANTON";
+  color: #111;
+  text-align: center;
+  z-index: 3;
+  position: absolute;
+  transition: 0.5s;
+  opacity: 0;
+}
 #news .inner .wrap article .pic:hover img {
   transform: scale(1.2);
-  transition: 0.5s;
   opacity: 1.2;
-  filter: blur(0px);
 }
-#news .inner .wrap h2 {
-  margin-bottom: 10px;
-  text-align: center;
+#news .inner .wrap article .pic:hover p {
+  opacity: 1;
 }
-#news .inner .wrap h2 a {
-  font: bold 20px/1 "ANTON";
-  color: #444;
-}
-#news .inner .wrap p {
-  font: 14px/1.3 "ANTON";
-  color: #fff;
-  text-align: center;
-}
-#news .inner article::after {
+#news .inner .wrap article::after {
   content: "";
   display: block;
   background: rgba(255, 255, 255, 0.6);
   width: 280px;
-  height: 180px;
+  height: 100%;
   position: absolute;
-  opacity: 0;
+  opacity: 0.8;
   transition: 0.5s;
+}
+#news .inner .wrap article:nth-of-type(1) p {
+  bottom: 7%;
+  left: 42%;
+  color: #000;
+}
+#news .inner .wrap article:nth-of-type(1):after {
+  top: -280px;
+  left: 0px;
+}
+#news .inner .wrap article:nth-of-type(1):hover:after {
+  top: 150px;
+  left: 0px;
+  background: rgba(183, 199, 207, 0.795);
+}
+#news .inner .wrap article:nth-of-type(1):hover:after p {
+  opacity: 1.2;
+}
+#news .inner .wrap article:nth-of-type(2) p {
+  top: 45%;
+  right: 0;
+  transform: rotate(90deg);
+  color: #fff;
+}
+#news .inner .wrap article:nth-of-type(2):after {
+  top: 0;
+  right: 280px;
+}
+#news .inner .wrap article:nth-of-type(2):hover:after {
+  top: 0;
+  right: -230px;
+  background: rgba(87, 68, 255, 0.877);
+}
+#news .inner .wrap article:nth-of-type(3) p {
+  bottom: 7%;
+  left: 42%;
+  color: #fff;
+}
+#news .inner .wrap article:nth-of-type(3):after {
+  top: -280px;
+  left: 0px;
+}
+#news .inner .wrap article:nth-of-type(3):hover:after {
+  top: 150px;
+  left: 0px;
+  background: rgba(0, 0, 0, 0.795);
+}
+#news .inner .wrap article:nth-of-type(4) p {
+  top: 45%;
+  left: -28px;
+  transform: rotate(90deg);
+}
+#news .inner .wrap article:nth-of-type(4):after {
+  top: 0;
+  left: 280px;
+}
+#news .inner .wrap article:nth-of-type(4):hover:after {
+  top: 0;
+  left: -230px;
+  background: rgba(252, 255, 99, 0.795);
 }
 
 #brand {
@@ -983,7 +1043,8 @@ a {
 #banner {
   width: 100%;
   padding: 150px 0;
-  background: url(../img/banner.jpg) no-repeat center/cover fixed;
+  background: url(../img/ban2.jpg) no-repeat center/cover fixed;
+  filter: grayscale(0.5);
 }
 #banner .inner {
   width: 1180px;
